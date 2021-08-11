@@ -46,7 +46,7 @@ int dem(int S, vector<int> arr, map<pair<int, int>, int>& check) { //check: ki�
         return 1;
     if (S < 0 || arr.size() == 0)
         return 0;
-    //map<pair<int, int>, int>::const_iterator it = check.find(make_pair(0,0)); //Sai do pair
+    //map<pair<int, int>, int>::const_iterator it = check.find(make_pair(0,0)); //Sai do pair(0,0) không có tác dụng
     map<pair<int, int>, int>::const_iterator it = check.find(make_pair(S, arr.size())); //it: lưu vị trí của pair{S,arr.size()}
     if (it == check.end()) { //nếu duyệt đến cuối vấn chưa xác định đc vị trí <==> chưa tồn tại pair{}
         vector<int> temp;
