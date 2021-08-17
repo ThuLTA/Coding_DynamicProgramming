@@ -50,6 +50,7 @@ int maxValue(vector<int> val, vector<int> wei, int n, int W) {
                     maxV[i][j] = max(maxV[i - 1][j], maxV[i][j]); //thì chỉ cần so sánh trên và dưới để tìm được trường hợp val lớn hơn
                 else //trường hợp có thể cộng dồn
                     maxV[i][j] = max(maxV[i - 1][j], maxV[i][j] + maxV[i - 1][j - wei[i]]);
+            }
             //****Giải thích****
             //maxV[i -1][j]: các maxV của dòng phía trên luôn là value_max [tại thời điểm xét i-1<->tại khối lượng đang xét j]
             //maxV[i][j] + maxV[i - 1][j - wei[i]]:
@@ -57,7 +58,6 @@ int maxValue(vector<int> val, vector<int> wei, int n, int W) {
             //  (2) maxV[i - 1][j - wei[i]] --> val_max của khối lượng bị dư ra. Lấy từ dòng phía trên.
             //==>Bởi vì các dòng phía trên đã được tính toán, nên tại mỗi j luôn là value_max 
             //      ==> nên ta chỉ cần xét giữa [i] với [i-1]
-            }
             else //nếu vật trước nặng hơn <=> không thể thêm vào balo
                 maxV[i][j] = max(maxV[i - 1][j], maxV[i][j]);
         }
