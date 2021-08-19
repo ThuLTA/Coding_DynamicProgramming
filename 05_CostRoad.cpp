@@ -71,7 +71,5 @@ float ways(float arr[][100], int n, map<pair<int, int>, float>& check, int r, in
 }
 
 float min(float a, float b) {
-    if (a < b)
-        return a;
-    else return b;
+    return (a<)?a:b;
 }
