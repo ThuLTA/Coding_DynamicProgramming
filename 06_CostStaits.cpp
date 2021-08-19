@@ -26,6 +26,7 @@ int cost(vector<int> arr) {
     return calculate(arr, arr.size()-1, check);
 }
 
+//Phương pháp: đi ngược từ cuối về đầu dãy
 int calculate(vector<int> arr, int n, map<int, int>& check) {
     if (n == 0 || n == 1)
         return arr[n]; //trả về chi phí tại vị trí đó
@@ -38,10 +39,7 @@ int calculate(vector<int> arr, int n, map<int, int>& check) {
 }
 
 int min(int a, int b) {
-    if (a < b)
-        return a;
-    else 
-        return b;
+    return (a<b)?a:b;
 }
 
 
