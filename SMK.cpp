@@ -56,6 +56,7 @@ void SubarrayModk(vector<int> arr, int n, int k, vector<int>& save) {
                 temp[i][j] = max(temp[i - 1][j], temp[i - 1][(k - abs(j-r)) % k] + 1);
             //
             //ta có tính chất: a mod k = x; b mod k = y ==> (a+b) mod k = (x+y) mod k
+            // (-r) mod k = (-r+k) mod k ****Lưu ý: phép mod trong thực tế khác với hàm mod số nguyên của Visual
             else
                 temp[i][j] = max(temp[i - 1][j], temp[i][j]);
         }
