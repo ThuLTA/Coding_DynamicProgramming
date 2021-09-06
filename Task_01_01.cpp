@@ -25,7 +25,7 @@ int solution(vector<int> arr) {
 
     int res = 0; //đếm phần tử
     for (int i = 0; i < arr.size(); i++) {
-        int k = lower_bound(b.begin(), b.end(), arr[i]) - b.begin(); //trả về k=index với b[index-1]<arr[i]
+        int k = lower_bound(b.begin(), b.end(), arr[i]) - b.begin(); //trả về k=index với b[index]<=arr[i] (index từ: 1 ..n end())
         b[k] = arr[i]; //lưu phần tử của arr đang xét vào mảng tạm
         res = max(res, k); //so sánh res-index
     }
